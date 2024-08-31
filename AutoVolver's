@@ -1,0 +1,179 @@
+--[[
+
+Resposta ao Woah25
+
+Pode dar dump e fdss mlk tou pouco me fudendo pra oq tu acha se quiser pode achar que é chatgpt a vontade tmnc rapaKKKKKKKKKKKKKKKKKKKK
+
+--------------------------------------------------------
+
+Sa merda tá horrível só deixei open source porque achei um cara na revolt que fez a mesma merda que o meu e é open source o dele
+
+--------------------------------------------------------
+
+--]]
+
+setclipboard("https://discord.gg/rNj5xPMckZ")
+
+game:GetService("StarterGui"):SetCore(
+    "SendNotification",
+    {
+        Title = "Feito por: ySixx",
+        Text = "Discord copiado para área de transferência",
+        Icon = "rbxassetid://18503887946",
+        Duration = 10
+    }
+)
+
+-- Vai ficar em inglês e fds sou obrigado a deixar em português não
+
+local a1 = {
+    initialCFrame = nil,
+    currentDirection = 0
+}
+
+local a2 = {
+    "ESQUERDAVOLVER!",
+    "DIREITAVOLVER!",
+    "RETAGUARDAVOLVER!",
+    "VANGUARDAVOLVER!",
+    "ESQUERDA VOLVER!",
+    "DIREITA VOLVER!",
+    "RETAGUARDA VOLVER!",
+    "VANGUARDA VOLVER!",
+    "ESQUERDA VOLVER !",
+    "DIREITA VOLVER !",
+    "RETAGUARDA VOLVER !",
+    "VANGUARDA VOLVER !",
+    "ES QUER DA VOLVER!",
+    "DI REI TA VOLVER!",
+    "RE TA GUAR DA VOLVER !",
+    "VAN GUAR DA VOLVER !",
+    "ES QUER DA VOLVER !",
+    "DI REI TA VOLVER !",
+    "RE TA GUAR DA VOLVER !",
+    "VAN GUAR DA VOLVER !"
+}
+
+local function a3(b1)
+    local b2 = game.Players.LocalPlayer
+    local b3 = b2.Character or b2.CharacterAdded:Wait()
+    local b4 = b3:WaitForChild("HumanoidRootPart")
+
+    local b5 = b4.CFrame
+    local b6 = tick()
+    local b7 = 0.3
+
+    while tick() - b6 < b7 do
+        local b8 = (tick() - b6) / b7
+        b4.CFrame = b5:Lerp(b1, b8)
+        wait(0.02)
+    end
+
+    b4.CFrame = b1
+end
+
+local function a4(b9)
+    local b2 = game.Players.LocalPlayer
+    local b3 = b2.Character or b2.CharacterAdded:Wait()
+    local b4 = b3:WaitForChild("HumanoidRootPart")
+    local b5 = b4.CFrame
+    local b6 = b5 * CFrame.Angles(0, math.rad(b9), 0)
+
+    local b7 = b6.LookVector
+    b6 = CFrame.new(b5.Position, b5.Position + b7)
+
+    return b6
+end
+
+local function a5()
+    local b9 = Lado == 1 and 90 or -90
+    a1.currentDirection = (a1.currentDirection - 1) % 4
+    a3(a4(b9))
+end
+
+local function a6()
+    local b9 = Lado == 1 and -90 or 90
+    a1.currentDirection = (a1.currentDirection + 1) % 4
+    a3(a4(b9))
+end
+
+local function a7()
+    local b9 = 180
+    a1.currentDirection = (a1.currentDirection + 2) % 4
+    a3(a4(b9))
+end
+
+local function a8()
+    local b2 = game.Players.LocalPlayer
+    local b3 = b2.Character or b2.CharacterAdded:Wait()
+    local b4 = b3:WaitForChild("HumanoidRootPart")
+    b4.CFrame = CFrame.new(b4.Position, b4.Position + b4.CFrame.LookVector)
+end
+
+local function a9()
+    if a1.initialCFrame then
+        a8()
+        a3(a1.initialCFrame)
+        a1.currentDirection = 0
+    end
+end
+
+local function a10(b11)
+    return b11:upper():gsub("%s+", " "):match("^%s*(.-)%s*$")
+end
+
+local function a11(b12)
+    local b13 = a10(b12)
+    if not b13 or not b13:match("!$") then
+        return
+    end
+
+    for _, b14 in ipairs(a2) do
+        if a10(b14) == b13 then
+            if b14:find("VANGUARDAVOLVER") then
+                a9()
+            elseif b14:find("RETAGUARDA VOLVER") then
+                a7()
+            elseif b14:find("ESQUERDA VOLVER") or b14:find("ESQUERDAVOLVER") then
+                a5()
+            elseif b14:find("DIREITA VOLVER") or b14:find("DIREITAVOLVER") then
+                a6()
+            end
+            return
+        end
+    end
+end
+
+local function a12(b15)
+    a11(b15)
+end
+
+game.Players.LocalPlayer.Chatted:Connect(a12)
+
+for _, b2 in ipairs(game.Players:GetPlayers()) do
+    b2.Chatted:Connect(
+        function(b15)
+            a11(b15)
+        end
+    )
+end
+
+game.Players.PlayerAdded:Connect(
+    function(b2)
+        b2.Chatted:Connect(
+            function(b15)
+                a11(b15)
+            end
+        )
+    end
+)
+
+local function a13()
+    local b2 = game.Players.LocalPlayer
+    local b3 = b2.Character or b2.CharacterAdded:Wait()
+    a1.initialCFrame = b3:WaitForChild("HumanoidRootPart").CFrame
+end
+
+a13()
+
+-- Oh no, woah vai dar dump 😱
