@@ -21,6 +21,9 @@ game:GetService("StarterGui"):SetCore(
         Icon = "rbxassetid://18503887946",
         Duration = 10
     }
+)
+
+-- a1 and a2 calmed down WOAH25?
 
 local a1 = nil
 local a2 = 0
@@ -30,7 +33,11 @@ local a3 = {
     "ESQUERDAVOLVER!",
     "DIREITAVOLVER!",
     "RETAGUARDAVOLVER!",
-    "VANGUARDAVOLVER!"
+    "VANGUARDAVOLVER!",
+    "ESQUER DA VOLVER !",
+    "DIREI TA VOLVER !",
+    "RETAGUAR DA VOLVER !",
+    "VANGUAR DA VOLVER !"
 }
 
 local function a4(b1)
