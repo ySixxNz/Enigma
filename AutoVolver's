@@ -24,8 +24,6 @@ game:GetService("StarterGui"):SetCore(
     }
 )
 
--- Have variable a1 and a2 calmed down Woah25 now?
-
 local a1 = nil
 local a2 = 0
 local xvideos = utf8.char(0x1F602) .. " Don't cry WOAH25 " .. utf8.char(0x1F602)
