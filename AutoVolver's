@@ -24,7 +24,7 @@ game:GetService("StarterGui"):SetCore(
     }
 )
 
--- a1 and a2 calmed down WOAH25?
+-- Have variable a1 and a2 calmed down Woah25 now?
 
 local a1 = nil
 local a2 = 0
