@@ -1,13 +1,12 @@
 --[[
 
-Response to Woah25:
+Response to Woah25
 
-You can dump and do whatever you want, kid, I don’t care what you think. Feel free to believe that it was ChatGPT that made the script, I couldn’t care less, LOL.
+You can dump and do whatever you want, kid, I don’t care what you think. Feel free to believe it’s ChatGPT, I couldn’t care less, LOL.
 
 --------------------------------------------------------
 
 This crap is terrible. I only left it open source because I found someone on Revolt who did the same crap as mine, and it’s open source too.
-
 --------------------------------------------------------
 
 --]]
@@ -27,6 +26,7 @@ game:GetService("StarterGui"):SetCore(
 local a1 = nil
 local a2 = 0
 local xvideos = utf8.char(0x1F602) .. " Don't cry WOAH25 " .. utf8.char(0x1F602)
+local kid = utf8.char(0x1F923) .. " Não, REIDELAS0018, eu não sou obrigado a trabalhar para você caso o script de auto volver esteja ruim. Se está achando ruim conserte você mesmo. A source do script está aberta então arrume. " .. utf8.char(0x1F923)
 
 local a3 = {
     "ESQUERDAVOLVER!",
@@ -160,3 +160,4 @@ end
 a14()
 
 print(xvideos)
+print(kid)
